@@ -9,6 +9,14 @@ Session.setDefault(SHOW_CONNECTION_ISSUE_KEY, false);
 
 var CONNECTION_ISSUE_TIMEOUT = 5000;
 
+
+Meteor.AppCache.config({
+  onlineOnly: [
+    '/bigimage.jpg',
+    '/largedata.json'
+  ]
+});
+
 Meteor.startup(function () {
   // set up a swipe left / right handler
   $(document.body).touchwipe({
