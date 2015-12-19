@@ -152,6 +152,17 @@ Template.listsShow.events({
     deleteList(this, template);
   },
 
+  'click .js-take-camera':function(event,template){
+      var cameraOptions = {
+        width: 800,
+        height: 600
+      };
+
+      MeteorCamera.getPicture(cameraOptions, function (error, data) {
+        Session.set("photo", data);
+      });
+  },
+
   'click .js-todo-add': function(event, template) {
     template.$('.js-todo-new input').focus();
   },
