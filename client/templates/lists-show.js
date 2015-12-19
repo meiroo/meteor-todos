@@ -59,6 +59,19 @@ var saveList = function(list, template) {
   Lists.update(list._id, {$set: {name: template.$('[name=name]').val()}});
 }
 
+var opencamera = function(list){
+
+  var cameraOptions = {
+        width: 800,
+        height: 600
+      };
+
+      MeteorCamera.getPicture(cameraOptions, function (error, data) {
+        Session.set("photo", data);
+      });
+
+}
+
 var deleteList = function(list) {
   // ensure the last public list cannot be deleted.
   if (! list.userId && Lists.find({userId: {$exists: false}}).count() === 1) {
@@ -133,6 +146,8 @@ Template.listsShow.events({
       editList(this, template);
     } else if ($(event.target).val() === 'delete') {
       deleteList(this, template);
+    }else if ($(event.target).val() === 'camera') {
+      opencamera(this, template);
     } else {
       toggleListPrivacy(this, template);
     }
@@ -153,14 +168,7 @@ Template.listsShow.events({
   },
 
   'click .js-take-camera':function(event,template){
-      var cameraOptions = {
-        width: 800,
-        height: 600
-      };
-
-      MeteorCamera.getPicture(cameraOptions, function (error, data) {
-        Session.set("photo", data);
-      });
+    opencamera(this,template);
   },
 
   'click .js-todo-add': function(event, template) {
