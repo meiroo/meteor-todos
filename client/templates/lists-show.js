@@ -65,10 +65,22 @@ var opencamera = function(list){
         width: 800,
         height: 600
       };
+  MeteorCamera.getPicture(cameraOptions, function (error, data) {
+    console.log(data);
+    Session.set("photo", data);
 
-      MeteorCamera.getPicture(cameraOptions, function (error, data) {
-        Session.set("photo", data);
-      });
+
+    Todos.insert({
+      type:'image',
+      listId: list._id,
+      text: data,
+      checked: false,
+      createdAt: new Date()
+    });
+    Lists.update(list._id, {$inc: {incompleteCount: 1}});
+
+    console.log(Images.find({}).count() + '   ' + Todos.find({}).count());
+  });
 
 }
 
@@ -182,7 +194,10 @@ Template.listsShow.events({
     if (! $input.val())
       return;
 
+    console.log(this._id);
+
     Todos.insert({
+      type:'text',
       listId: this._id,
       text: $input.val(),
       checked: false,

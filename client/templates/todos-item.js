@@ -1,6 +1,9 @@
 var EDITING_KEY = 'EDITING_TODO_ID';
 
 Template.todosItem.helpers({
+  ifImage: function() {
+    return this.type === 'image';
+  },
   checkedClass: function() {
     return this.checked && 'checked';
   },
