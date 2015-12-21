@@ -26,7 +26,7 @@
 //
 
 #import "AppDelegate.h"
-#import "MainViewController.h"
+#import "FirstViewController.h"
 
 #import <Cordova/CDVPlugin.h>
 
@@ -63,6 +63,8 @@
  */
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
+    return YES;
+    
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
 
 #if __has_feature(objc_arc)
@@ -73,9 +75,9 @@
     self.window.autoresizesSubviews = YES;
 
 #if __has_feature(objc_arc)
-        self.viewController = [[MainViewController alloc] init];
+        self.viewController = [[FirstViewController alloc] init];
 #else
-        self.viewController = [[[MainViewController alloc] init] autorelease];
+        self.viewController = [[[FirstViewController alloc] init] autorelease];
 #endif
 
     // Set your app's start page by setting the <content src='foo.html' /> tag in config.xml.

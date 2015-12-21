@@ -25,9 +25,9 @@
 //  Copyright ___ORGANIZATIONNAME___ ___YEAR___. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "FirstViewController.h"
 
-@implementation MainViewController
+@implementation FirstViewController
 
 - (id)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
