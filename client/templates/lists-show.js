@@ -59,6 +59,19 @@ var saveList = function(list, template) {
   Lists.update(list._id, {$set: {name: template.$('[name=name]').val()}});
 }
 
+var addLocation = function(list){
+  var loc = Geolocation.latLng() || { lat: 0, lng: 0 };
+  var data = 'http://api.map.baidu.com/staticimage?width=400&height=300&center='
+  +loc.lng+','+loc.lat+'&zoom=13';
+  Todos.insert({
+      type:'location',
+      listId: list._id,
+      text: data,
+      checked: false,
+      createdAt: new Date()
+    });
+    Lists.update(list._id, {$inc: {incompleteCount: 1}});
+}
 var opencamera = function(list){
 
   var cameraOptions = {
@@ -78,8 +91,6 @@ var opencamera = function(list){
       createdAt: new Date()
     });
     Lists.update(list._id, {$inc: {incompleteCount: 1}});
-
-    console.log(Images.find({}).count() + '   ' + Todos.find({}).count());
   });
 
 }
@@ -160,7 +171,10 @@ Template.listsShow.events({
       deleteList(this, template);
     }else if ($(event.target).val() === 'camera') {
       opencamera(this, template);
-    } else {
+    } else if($(event.target).val() === 'location'){
+      addLocation(this,template);
+    }
+    else {
       toggleListPrivacy(this, template);
     }
 
@@ -181,6 +195,10 @@ Template.listsShow.events({
 
   'click .js-take-camera':function(event,template){
     opencamera(this,template);
+  },
+
+  'click .js-take-position':function(event,template){
+    addLocation(this,template);
   },
 
   'click .js-todo-add': function(event, template) {

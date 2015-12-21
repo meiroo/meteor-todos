@@ -5,9 +5,13 @@
       <span class="checkbox-custom"></span>
     </label>
 
-    {{#if ifImage}}
+    {{#if status "image"}}
     <img src="{{text}}" style='max-width:300px;max-height: 300px;'>
-    {{else}}
+    {{/if}}
+    {{#if status "location"}}
+    <img src="{{text}}" style='max-width:400px;max-height: 300px;'>
+    {{/if}}
+    {{#if status "text"}}
     <input type="text" value="{{text}}" placeholder="Task name">
     {{/if}}
     <a class="js-delete-item delete-item" href="#"><span class="icon-trash"></span></a>
