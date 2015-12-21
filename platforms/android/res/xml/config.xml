@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.id1yx2b7m1yezn8b16ja77t" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <name>Todos</name>
+    <description>A simple todo list app built in Meteor.</description>
+    <author email="us@percolatestudio.com" href="http://percolatestudio.com">Percolate Studio Team</author>
+    <preference name="webviewbounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="deployment-target" value="7.0" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <content src="index.html" />
+    <access launch-external="true" origin="tel:*" />
+    <access launch-external="true" origin="geo:*" />
+    <access launch-external="true" origin="mailto:*" />
+    <access launch-external="true" origin="sms:*" />
+    <access launch-external="true" origin="market:*" />
+    <access origin="file:*" />
+    <access origin="cdv:*" />
+    <access origin="gap:*" />
+    <access origin="http://meteor.local/*" />
+    <access origin="*://10.0.1.244/*" />
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.LegacyWhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="CordovaUpdate">
+        <param name="android-package" value="com.meteor.cordova.updater.CordovaUpdatePlugin" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="FileTransfer">
+        <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+    </feature>
+</widget>

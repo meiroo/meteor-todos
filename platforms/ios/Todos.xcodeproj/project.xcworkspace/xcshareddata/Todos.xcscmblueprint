@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3284D9C0EC06BE00ADD8FD073F491ACD32BB05EA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "3284D9C0EC06BE00ADD8FD073F491ACD32BB05EA" : 0,
+    "8C2A62821C68BC3F8EA42E3F17DCE0992151FBB6" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "337F498F-E8BD-4B17-A687-E72468AAA18B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "3284D9C0EC06BE00ADD8FD073F491ACD32BB05EA" : "todos\/",
+    "8C2A62821C68BC3F8EA42E3F17DCE0992151FBB6" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Todos",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : ".meteor\/local\/cordova-build\/platforms\/ios\/Todos.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/meiroo\/meteor-todos.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3284D9C0EC06BE00ADD8FD073F491ACD32BB05EA"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/zittix\/iPTAM.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8C2A62821C68BC3F8EA42E3F17DCE0992151FBB6"
+    }
+  ]
+}
