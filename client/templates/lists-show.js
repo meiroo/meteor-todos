@@ -60,7 +60,26 @@ var saveList = function(list, template) {
 }
 
 var addLocation = function(list){
-  var loc = Geolocation.latLng() || { lat: 0, lng: 0 };
+  var message = {"cordova":"try_to_get_location"};
+  window.webkit.messageHandlers.cordova.postMessage(message);
+
+  document.todoss = Todos;
+  document.listss = Lists;
+  document.setLocation=function(lat,lng){
+    alert('message from native lat:'+lat+' lng:'+lng);
+    var data = 'http://api.map.baidu.com/staticimage?width=400&height=300&center='
+    +lng+','+lat+'&zoom=13';
+    document.todoss.insert({
+        type:'location',
+        listId: list._id,
+        text: data,
+        checked: false,
+        createdAt: new Date()
+      });
+    document.listss.update(list._id, {$inc: {incompleteCount: 1}});
+  }
+
+  /*var loc = Geolocation.latLng() || { lat: 0, lng: 0 };
   var data = 'http://api.map.baidu.com/staticimage?width=400&height=300&center='
   +loc.lng+','+loc.lat+'&zoom=13';
   Todos.insert({
@@ -70,7 +89,7 @@ var addLocation = function(list){
       checked: false,
       createdAt: new Date()
     });
-    Lists.update(list._id, {$inc: {incompleteCount: 1}});
+    Lists.update(list._id, {$inc: {incompleteCount: 1}});*/
 }
 var opencamera = function(list){
 
