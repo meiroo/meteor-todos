@@ -29,6 +29,9 @@ Meteor.startup(function () {
     preventDefaultEvents: false
   });
 
+  var message = {"cordova":"say_hello"};
+  window.webkit.messageHandlers.cordova.postMessage(message);
+
   // Only show the connection error box if it has been 5 seconds since
   // the app started
   setTimeout(function () {
